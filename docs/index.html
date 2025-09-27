@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>إعلانات حراج الأكثر تفاعلاً</title>
+      <style>
+                * {
+                              margin: 0;
+                              padding: 0;
+                              box-sizing: border-box;
+                }
+
+                body {
+                              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                              min-height: 100vh;
+                              padding: 20px;
+                }
+
+                .container {
+                              max-width: 1200px;
+                              margin: 0 auto;
+                              background: white;
+                              border-radius: 15px;
+                              box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                              overflow: hidden;
+                }
+
+                .header {
+                              background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+                              color: white;
+                              padding: 30px;
+                              text-align: center;
+                }
+
+                .header h1 {
+                              font-size: 2.5rem;
+                              margin-bottom: 10px;
+                }
+
+                .header p {
+                              font-size: 1.1rem;
+                              opacity: 0.9;
+                }
+
+                .stats {
+                              display: grid;
+                              grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                              gap: 20px;
+                              padding: 30px;
+                              background: #f8f9fa;
+                              border-bottom: 1px solid #dee2e6;
+                }
+
+                .stat-card {
+                              background: white;
+                              padding: 20px;
+                              border-radius: 10px;
+                              text-align: center;
+                              box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                }
+
+                .stat-number {
+                              font-size: 2rem;
+                              font-weight: bold;
+                              color: #2c3e50;
+                }
+
+                .stat-label {
+                              color: #6c757d;
+                              margin-top: 5px;
+                }
+
+                .content {
+                              padding: 30px;
+                }
+
+                .ads-grid {
+                              display: grid;
+                              gap: 20px;
+                }
+
+                .ad-card {
+                              background: white;
+                              border: 1px solid #dee2e6;
+                              border-radius: 10px;
+                              padding: 20px;
+                              transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+
+                .ad-card:hover {
+                              transform: translateY(-5px);
+                              box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+                }
+
+                .ad-title {
+                              font-size: 1.3rem;
+                              font-weight: bold;
+                              color: #2c3e50;
+                              margin-bottom: 10px;
+                              line-height: 1.4;
+                }
+
+                .ad-title a {
+                              color: inherit;
+                              text-decoration: none;
+                }
+
+                .ad-title a:hover {
+                              color: #3498db;
+                }
+
+                .ad-meta {
+                              display: flex;
+                              justify-content: space-between;
+                              align-items: center;
+                              margin-bottom: 15px;
+                              flex-wrap: wrap;
+                              gap: 10px;
+                }
+
+                .ad-replies {
+                              background: #e74c3c;
+                              color: white;
+                              padding: 5px 12px;
+                              border-radius: 20px;
+                              font-weight: bold;
+                              font-size: 0.9rem;
+                }
+
+                .ad-date {
+                              color: #6c757d;
+                              font-size: 0.9rem;
+                }
+
+                .ad-description {
+                              color: #495057;
+                              line-height: 1.6;
+                              margin-bottom: 15px;
+                }
+
+                .ad-footer {
+                              border-top: 1px solid #dee2e6;
+                              padding-top: 15px;
+                              display: flex;
+                              justify-content: space-between;
+                              align-items: center;
+                }
+
+                .ad-category {
+                              background: #3498db;
+                              color: white;
+                              padding: 4px 10px;
+                              border-radius: 15px;
+                              font-size: 0.8rem;
+                }
+
+                .loading {
+                              text-align: center;
+                              padding: 50px;
+                              color: #6c757d;
+                }
+
+                .error {
+                              text-align: center;
+                              padding: 50px;
+                              color: #e74c3c;
+                }
+
+                .footer {
+                              background: #2c3e50;
+                              color: white;
+                              text-align: center;
+                              padding: 20px;
+                              margin-top: 30px;
+                }
+
+                @media (max-width: 768px) {
+                              .header h1 {
+                                                font-size: 2rem;
+                              }
+
+                              .stats {
+                                                padding: 20px;
+                                                grid-template-columns: repeat(2, 1fr);
+                              }
+
+                              .content {
+                                                padding: 20px;
+                              }
+
+                              .ad-meta {
+                                                flex-direction: column;
+                                                align-items: flex-start;
+                              }
+                }
+            </style>
+  </head>
+  <body>
+        <div class="container">
+                  <div class="header">
+                                <h1>🔥 إعلانات حراج الأكثر تفاعلاً</h1>
+                              <p>يتم تحديث البيانات تلقائياً كل 6 ساعات</p>
+                  </div>div>
+                
+                <div class="stats">
+                            <div class="stat-card">
+                                            <div class="stat-number" id="totalAds">-</div>div>
+                                            <div class="stat-label">إجمالي الإعلانات</div>div>
+                            </div>div>
+                            <div class="stat-card">
+                                            <div class="stat-number" id="totalReplies">-</div>div>
+                                            <div class="stat-label">إجمالي الردود</div>div>
+                            </div>div>
+                            <div class="stat-card">
+                                            <div class="stat-number" id="avgReplies">-</div>div>
+                                            <div class="stat-label">متوسط الردود</div>div>
+                            </div>div>
+                            <div class="stat-card">
+                                            <div class="stat-number" id="lastUpdate">-</div>div>
+                                            <div class="stat-label">آخر تحديث</div>div>
+                            </div>div>
+                </div>div>
+                
+                <div class="content">
+                            <div id="loading" class="loading">
+                                            <h3>جاري تحميل البيانات...</h3>
+                            </div>div>
+                            
+                            <div id="error" class="error" style="display: none;">
+                                            <h3>حدث خطأ في تحميل البيانات</h3>
+                                            <p>يرجى المحاولة مرة أخرى لاحقاً</p>
+                            </div>div>
+                            
+                            <div id="adsContainer" class="ads-grid" style="display: none;">
+                                            <!-- سيتم ملء الإعلانات هنا بواسطة JavaScript -->
+                            </div>div>
+                </div>div>
+                
+                <div class="footer">
+                            <p>🤖 تم إنشاء هذا الموقع بواسطة GitHub Actions | البيانات من موقع حراج</p>
+                            <p>آخر تحديث: <span id="footerUpdate">-</span>span></p>
+                </div>div>
+        </div>div>
+      
+      <script src="app.js"></script>
+  </body>
+</html>html></p></p></h1>
+  </body>
+      </style></title>
+  </head>
