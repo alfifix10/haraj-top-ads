@@ -1,0 +1,16 @@
+{
+    "name": "haraj-top-ads",
+    "version": "1.0.0",
+    "description": "Auto-updating Top Haraj Ads (replies-based) – free via GitHub Actions + Pages",
+    "type": "module",
+    "main": "scraper.mjs",
+    "scripts": {
+          "scrape": "node scraper.mjs"
+    },
+    "dependencies": {
+          "node-fetch": "^3.3.2"
+    },
+    "keywords": ["haraj", "scraper", "github-actions", "github-pages"],
+    "author": "",
+    "license": "MIT"
+}
